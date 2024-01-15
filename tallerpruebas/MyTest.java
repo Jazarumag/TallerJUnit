@@ -14,20 +14,42 @@ public class MyTest {
 	}
 
 	@Test
-	public void testCalculateYearBonus() {
+	public void testCalculateYearBonusWorkerUSA() {
 		Employee workerUSA = new Employee(500, "USD", 0, EmployeeType.Worker);
+		assertEquals(386.0F, workerUSA.CalculateYearBonus(),0.0F); 
+	}
+	
+	@Test
+	public void testCalculateYearBonusSupervisorUSA() {
 		Employee supervisorUSA = new Employee(500, "USD", 0, EmployeeType.Supervisor);
+		assertEquals(693.0F, supervisorUSA.CalculateYearBonus(),0.0F);		
+	}
+	
+	@Test
+	public void testCalculateYearBonusManagerUSA() {
 		Employee managerUSA = new Employee(500, "USD", 0, EmployeeType.Manager);
-		Employee workerJPN = new Employee(500, "YEN", 0, EmployeeType.Worker);
-		Employee supervisorJPN = new Employee(500, "YEN", 0, EmployeeType.Supervisor);
-		Employee managerJPN = new Employee(500, "YEN", 0, EmployeeType.Manager);
-		assertEquals(386.0F, workerUSA.CalculateYearBonus(),0.0F);
-		assertEquals(693.0F, supervisorUSA.CalculateYearBonus(),0.0F);
 		assertEquals(886.0F, managerUSA.CalculateYearBonus(),0.0F);
+	}
+	
+	@Test
+	public void testCalculateYearBonusWorkerJPN() {
+		Employee workerJPN = new Employee(500, "YEN", 0, EmployeeType.Worker);
 		assertEquals(386.0F, workerJPN.CalculateYearBonus(),0.0F);
+	}
+	
+	@Test
+	public void testCalculateYearBonusSupervisorJPN() {
+		Employee supervisorJPN = new Employee(500, "YEN", 0, EmployeeType.Supervisor);
 		assertEquals(668.0F, supervisorJPN.CalculateYearBonus(),0.0F);
+		
+	}
+	@Test
+	public void testCalculateYearBonusManagerJPN() {
+		Employee managerJPN = new Employee(500, "YEN", 0, EmployeeType.Manager);
 		assertEquals(861.0F, managerJPN.CalculateYearBonus(),0.0F);
 		
 	}
+	
+	
 
 }
