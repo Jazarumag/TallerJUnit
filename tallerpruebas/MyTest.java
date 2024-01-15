@@ -1,8 +1,15 @@
 package tallerpruebas;
 import static org.junit.Assert.assertEquals;
+import java.lang.reflect.Field;
+import java.time.Clock;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+
 import org.junit.Test;
 
 public class MyTest {
+
 	@Test
 	 public void testFindMax(){
 	 assertEquals(4,Calculation.findMax(new int[]{1,3,4,2}));
@@ -28,7 +35,7 @@ public class MyTest {
 
 	@Test
     public void testCsForWorker() {
-        Employee worker = new Employee(1000, "V-BUCKS", 0.1F, EmployeeType.Supervisor);
+        Employee worker = new Employee(1000, "USD", 0.1F, EmployeeType.Supervisor);
         float result = worker.cs();
         // Adjust this value based on your expected result for the Supervisor case
         assertEquals(1064.3, result, 0.1);
@@ -50,8 +57,10 @@ public class MyTest {
         assertEquals(1064.4, result, 0.1);
     }
     
-    /*@Test
-    public void testCsMonthForWorker() {
-    	
-    }*/
+    @Test
+    public void testWorkerSalaryForDifferentMonth() {
+    	Employee worker = new Employee(3000, "USD", 0.1F, EmployeeType.Worker);
+        float result = worker.cs();
+        assertEquals(3000.0, result, 0.1);
+    }
 }
