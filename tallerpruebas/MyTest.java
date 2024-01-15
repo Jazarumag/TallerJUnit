@@ -73,10 +73,10 @@ public class MyTest {
 
 	@Test
     public void testCsForWorker() {
-        Employee worker = new Employee(1750, "USD", 30.7F, EmployeeType.Supervisor);
+        Employee worker = new Employee(1750, "USD", 30.7F, EmployeeType.Worker);
         float result = worker.cs();
         // Adjust this value based on your expected result for the Supervisor case
-        assertEquals(1825.1, result, 0.1);
+        assertEquals(1814.3, result, 0.1);
     }
 	
     @Test
