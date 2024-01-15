@@ -26,6 +26,14 @@ public class MyTest {
         assertEquals(1014.3, result, 0.1);
     }
 
+	@Test
+    public void testCsForWorker() {
+        Employee worker = new Employee(1000, "V-BUCKS", 0.1F, EmployeeType.Supervisor);
+        float result = worker.cs();
+        // Adjust this value based on your expected result for the Supervisor case
+        assertEquals(1064.3, result, 0.1);
+    }
+	
     @Test
     public void testCsForSupervisor() {
         Employee supervisor = new Employee(1000, "USD", 0.1F, EmployeeType.Supervisor);
@@ -41,4 +49,9 @@ public class MyTest {
         // Adjust this value based on your expected result for the Manager case
         assertEquals(1064.4, result, 0.1);
     }
+    
+    /*@Test
+    public void testCsMonthForWorker() {
+    	
+    }*/
 }
