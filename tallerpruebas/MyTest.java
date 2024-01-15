@@ -28,33 +28,33 @@ public class MyTest {
 
 	@Test
     public void testCsForWorkerWithOtherCurrency() {
-        Employee worker = new Employee(1000, "EUR", 0.1F, EmployeeType.Worker);
+        Employee worker = new Employee(1500, "EUR", 25.3F, EmployeeType.Worker);
         float result = worker.cs();
-        assertEquals(1014.3, result, 0.1);
+        assertEquals(1489.3, result, 0.1);
     }
 
 	@Test
     public void testCsForWorker() {
-        Employee worker = new Employee(1000, "USD", 0.1F, EmployeeType.Supervisor);
+        Employee worker = new Employee(1750, "USD", 30.7F, EmployeeType.Supervisor);
         float result = worker.cs();
         // Adjust this value based on your expected result for the Supervisor case
-        assertEquals(1064.3, result, 0.1);
+        assertEquals(1825.1, result, 0.1);
     }
 	
     @Test
     public void testCsForSupervisor() {
-        Employee supervisor = new Employee(1000, "USD", 0.1F, EmployeeType.Supervisor);
+        Employee supervisor = new Employee(1800, "USD", 22.2F, EmployeeType.Supervisor);
         float result = supervisor.cs();
         // Adjust this value based on your expected result for the Supervisor case
-        assertEquals(1064.3, result, 0.1);
+        assertEquals(1872.1, result, 0.1);
     }
 
     @Test
     public void testCsForManager() {
-        Employee manager = new Employee(1000, "USD", 0.1F, EmployeeType.Manager);
+        Employee manager = new Employee(3900, "USD", 31.9F, EmployeeType.Manager);
         float result = manager.cs();
         // Adjust this value based on your expected result for the Manager case
-        assertEquals(1064.4, result, 0.1);
+        assertEquals(3986.6, result, 0.1);
     }
     
     @Test
